@@ -1,0 +1,84 @@
+# These settings are synced to GitHub by https://probot.github.io/apps/settings/
+
+repository:
+  # See https://developer.github.com/v3/repos/#edit for all available settings.
+
+  # The name of the repository. Changing this will rename the repository
+  name: minigmp
+
+  # A short description of the repository that will show up on GitHub
+  description: A small implementation of a subset of GMP's mpn and mpz interfaces
+
+  # A URL with more information about the repository
+  homepage: 
+
+  # A comma-separated list of topics to set on the repository
+  topics: 
+
+  # Either `true` to make the repository private, or `false` to make it public.
+  private: false
+
+  # Either `true` to enable issues for this repository, `false` to disable them.
+  has_issues: false
+
+  # Either `true` to enable projects for this repository, or `false` to disable them.
+  # If projects are disabled for the organization, passing `true` will cause an API error.
+  has_projects: false
+
+  # Either `true` to enable the wiki for this repository, `false` to disable it.
+  has_wiki: false
+
+  # Either `true` to enable downloads for this repository, `false` to disable them.
+  has_downloads: false
+
+  # Updates the default branch for this repository.
+  default_branch: master
+
+  # Either `true` to allow squash-merging pull requests, or `false` to prevent
+  # squash-merging.
+  allow_squash_merge: false
+
+  # Either `true` to allow merging pull requests with a merge commit, or `false`
+  # to prevent merging pull requests with merge commits.
+  allow_merge_commit: true
+
+  # Either `true` to allow rebase-merging pull requests, or `false` to prevent
+  # rebase-merging.
+  allow_rebase_merge: false
+
+# Labels: define labels for Issues and Pull Requests
+labels:
+  - name: bug
+    color: CC0000
+    description: An issue with the system
+    
+  - name: feature
+    color: 336699
+    description: New functionality
+
+  - name: 'WIP'
+    color: febc2f
+    description: 'No need to check it for the moment'
+
+# Collaborators: give specific users access to this repository.
+collaborators:
+  - username: Pix4D-Janus
+    permission: push
+
+teams:
+  - name: developers
+    permission: push
+
+branches:
+  - name: master
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 2
+        dismiss_stale_reviews: false
+        require_code_owner_reviews: true
+        dismissal_restrictions: {}
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: true
+      restrictions: null
